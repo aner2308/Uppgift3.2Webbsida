@@ -16,7 +16,7 @@ async function getData() {
         //Loopa igenom datan och skapa article- element för varje jobberfrenhet
         data.forEach(workexperience => {
             const article = document.createElement("article");
-            article.dataset.id = workexperience.id; //Ger articlen samma ID som jobberfarenheten
+            article.dataset._id = workexperience._id; //Ger articlen samma ID som jobberfarenheten
             article.innerHTML = `
             <h2>${workexperience.companyname}</h2>
             <p><strong>Jobbtitel:</strong> ${workexperience.jobtitle}</p>
@@ -28,31 +28,31 @@ async function getData() {
 
             //Lägger till eventListener för delete knappen i articlen
             const deleteBtn = article.querySelector(".deleteBtn");
-            deleteBtn.addEventListener("click", () => deleteWorkexperience(workexperience.id));
+            deleteBtn.addEventListener("click", () => deleteWorkexperience(workexperience._id));
         });
     } catch (error) {
         console.error("Något gick fel: ", error);
     }
 }
 
-async function deleteWorkexperience(id) {
+async function deleteWorkexperience(_id) {
     try {
-        const deleteUrl = `${url}/${id}`;
+        const deleteUrl = `${url}/${_id}`;
         const response = await fetch(deleteUrl, {
             method: "DELETE"
         });
 
         if (response.ok) {
             // Tar bort articlen
-            const articleToDelete = document.querySelector(`article[data-id="${id}"]`);
+            const articleToDelete = document.querySelector(`article[data-_id="${_id}"]`);
             if (articleToDelete) {
                 articleToDelete.remove();
-                console.log(`Jobberfarenhet med id ${id} har raderats`);
+                console.log(`Jobberfarenhet med id ${_id} har raderats`);
             } else {
-                console.error(`Kunde inte hitta article med id ${id} i DOM:en.`);
+                console.error(`Kunde inte hitta article med id ${_id} i DOM:en.`);
             }
         } else {
-            throw new Error(`Fel vid radering av jobberfarenhet med id ${id}.`);
+            throw new Error(`Fel vid radering av jobberfarenhet med id ${_id}.`);
         }
     } catch (error) {
         console.error("Error:", error);
