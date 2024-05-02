@@ -2,6 +2,7 @@
 
 const url = "https://mongodb-api-c53n.onrender.com/jobs";
 
+//Laddar in data när webbsidan är färdigladdad
 document.addEventListener("DOMContentLoaded", () => {
     getData();
 });
