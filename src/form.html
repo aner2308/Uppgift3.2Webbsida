@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lägg till</title>
+    <link rel="stylesheet" href="css/main.scss">
+    <script src="js/form.js" type="module"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <a href="index.html" class="logotyp"><img src="img/ReSummera.svg" alt="logotyp"></a>
+            <div class="header-right">
+                <a href="form.html" class="active link">Lägg till</a>
+                <a class="notActive link" href="index.html">Jobbsidan</a>
+                <a href="about.html" class="notActive link">Om sidan</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1>Lägg till</h1>
+        <p class="brödtext">Fyll i formuläret och tryck på skicka för att registrera ny jobberfarenhet. Vid lyckad registrering hamnar din nya erfarenhet på Jobbsidan.</p>
+        <p class="brödtext">* = Obligatoriska fält.</p>
+
+        <form id="workexperienceForm">
+            <label for="companyname">*Företagsnamn:</label><br>
+            <input type="text" id="companyname" name="companyname"><br>
+            <label for="jobtitle">*Jobbtitel:</label><br>
+            <input type="text" id="jobtitle" name="jobtitle"><br>
+            <label for="location">*Plats:</label><br>
+            <input type="text" id="location" name="location"><br>
+            <label for="description">*Beskrivning:</label><br>
+            <textarea id="description" name="description"></textarea><br><br>
+            <button type="button" id="submitBtn">Skicka</button>
+        </form>
+        <div id="errorMsg"></div>
+    </main>
+</body>
+
+</html>
