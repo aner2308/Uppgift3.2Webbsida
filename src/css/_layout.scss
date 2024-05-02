@@ -6,7 +6,9 @@ html {
 }
 
 body {
-    background: linear-gradient(90deg, #a9a5b4, #e6e6e6, #e6e6e6, #e6e6e6, #a9a5b4);
+    background-image: url("/src/img/background.jpg");
+    background-size: cover;
+    object-fit: contain;
     min-height: 100vh;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
