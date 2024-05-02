@@ -131,20 +131,20 @@ article {
     z-index: 3;
     border: none;
     outline: none;
-    background-color: base.$text-color;
+    background-color: rgb(26, 117, 153);
     color: white;
     cursor: pointer;
     padding: 15px;
     padding-left: 20px;
     padding-right: 20px;
-    border-radius: 5px;
+    border-radius: 50%;
     font-size: 18px;
     box-shadow: 0px 4px 5px #333;
     transition: background-color 0.5s ease;
 }
 
 #topBtn:hover {
-    background-color: base.$text-color-dark;
+    background-color: rgb(9, 65, 87);
 }
 
 //Styling av formulär
